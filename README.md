@@ -1,12 +1,14 @@
-# Python script implementation of Residual 50/101/152-layer Network with Identity Mapping based on Caffe
+# Python script implementation of Residual 18/34/50/101/152-layer Network with Identity Mapping based on Caffe
 <img src="http://7xrja7.com1.z0.glb.clouddn.com/identity_mapping_resnet.png" alt="residual net structure image" width="200px" /></br>
-the new net structure is given in this figure, in which we can see that **BN** layer and **ReLU** layer are stacked before weight layer. This script provide simple way to choose the layer to generate:</br>
+the new net structure is given in this figure, in which we can see that **BN** layer and **ReLU** layer are stacked before weight layer. This script provides a simple way to select the layer to generate:</br>
 <pre lang=python>
+layer_18_layer = (2, 2, 2, 2) #18 layers
+layer_34_layer = (3, 4, 6, 3) # 34 layers
 layer_50_layer = (3, 4, 6, 3) #50 layers
 layer_101_layer = (3, 4,  23, 3) #101 layers
 layer_152_layer = (3, 8, 38, 3) #152 layers
 </pre>
-This script generates train/test layer separately. If you want to generate the layer for model training, or model testing, you have to slight modify the script.
+This script generates train/test layer separately. If you want to generate the layer for model training, or model testing, you have to slight modify the script. Note that, in addtion to the five layers discussed above, one can definitely choose to other layer with different stacked layers.
 
 #Miscellaneous
 1. I appreciate [Soeaver](https://github.com/soeaver/caffe-model) for the initial inspiration to write this code.
